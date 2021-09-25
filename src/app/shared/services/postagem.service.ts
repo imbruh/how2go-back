@@ -11,7 +11,7 @@ import { UsuarioService } from './usuario.service';
 export class PostagemService {
 
   fotos: Array<string>;
-  URL_POSTAGENS = 'https://h2g-b.herokuapp.com/postagens/';
+  URL_POSTAGENS = 'https://shielded-castle-99479.herokuapp.com/postagens/';
   usuario_logado = usuarioLogado;
   
   constructor(private httpClient : HttpClient, private usuarioService : UsuarioService) { 

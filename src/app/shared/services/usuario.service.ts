@@ -10,7 +10,7 @@ import { MensagemService } from './mensagem.service';
 })
 
 export class UsuarioService {
-  URL_USUARIOS="https://h2g-b.herokuapp.com/usuarios/";
+  URL_USUARIOS="https://shielded-castle-99479.herokuapp.com/usuarios/";
   usuario_logado= usuarioLogado;
   usuario = new Usuario();
   foto: Observable<any>;
@@ -60,6 +60,10 @@ export class UsuarioService {
     this.usuario_logado.push(user)
     this.usuario_logado.shift()
     localStorage.setItem("id", "0")
+  }
+
+  excluir(id: number) {
+    return this.httpClient.delete(`${this.URL_USUARIOS}${id}`);
   }
 
    //-----------------------------------UPLOAD FOTOS-----------------------------------

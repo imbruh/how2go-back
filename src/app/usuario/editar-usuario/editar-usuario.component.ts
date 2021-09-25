@@ -90,4 +90,13 @@ export class EditarUsuarioComponent implements OnInit {
       this.senhaEdit = true;
     }
   }
+
+  excluirUsuario(): void {
+    this.usuarioService.excluir(this.usuario.idUsuario).subscribe(
+     () => {
+         this.usuarioService.sair();
+         this.roteador.navigate(['listarPostagens']);
+        }
+    );
+  } 
 }
